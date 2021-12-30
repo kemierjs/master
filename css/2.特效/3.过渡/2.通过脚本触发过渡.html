@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通过脚本触发过渡</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        z-index: 99;
+    }
+
+    .item {
+        width: 0;
+        height: 0;
+        background: #000;
+        transition: all .3s;
+    }
+
+    .item-to {
+        opacity: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+
+</style>
+<body>
+<body>
+<button type="button" id="btn">点我</button>
+<div class="item"></div>
+
+</body>
+<script type="text/javascript">
+	document.querySelector('#btn').addEventListener('click', function (e) {
+		let flag = Array.from(document.querySelector('.item').classList).includes('item-to')
+		if (flag) {
+			document.querySelector('.item').classList.remove('item-to')
+		} else {
+			document.querySelector('.item').classList.add('item-to')
+		}
+	})
+</script>
+</body>
+</html>

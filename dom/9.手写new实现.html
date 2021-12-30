@@ -1,0 +1,27 @@
+<script type="text/javascript">
+	// 1.首先用Object.creat()创建一个空对象obj;
+	// 2.去除第一个参数,也就是我们传入的构造函数,理由shift方法修改原数组,所以 arguments 会被去除第一个参数;
+	// 3.将obj的_proto_指向构造函数的prototype,这样obj就能访问到构造函数原型上的属性方法;
+	// 4.将构造函数的this用call或apply方法指向obj,让obj拥有函数内部属性方法;
+	// 5.返回obj;
+
+	function genNewObj() {
+		let obj = {}
+		let Constructor = [].shift.apply(arguments)
+		if (!(typeof Constructor === 'function')) { //重点需要添加小括号进行取反
+			   return  null
+		}
+		obj.__proto__ = Constructor.prototype //创建对象的核心方法 ，其实就是改变指针的指向 相当于执行new constructor()方法
+		let result = Constructor.apply(obj, arguments)  //通过 apply进行参数赋值
+		return result ? result : obj
+	}
+
+	function Person(age) {
+		this.age = age
+
+	}
+
+	let obj = genNewObj(null, 123)
+	console.log(obj)
+
+</script>

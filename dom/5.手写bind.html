@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	let obj = {
+		name: 'zs'
+	}
+	Function.prototype.bind = function (context) {
+		let fn = this
+		let _this = [].shift.call(arguments)
+		let args = arguments
+		return function () {
+			fn.apply(_this, args)
+		}
+	}
+
+	function test(param) {
+		console.log(this.name)
+		console.log(param)
+	}
+
+	test.bind(obj, 123)()
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡</title>
+</head>
+<style>
+    .box {
+        border: 1px solid #333;
+        width: 100px;
+        height: 100px;
+        background-color: #0000FF;
+        transition:all 0.5s  0.5s;
+    }
+    .box:hover {
+        background-color: #FFCCCC;
+        width:200px;
+        height:200px;
+        cursor: pointer;
+    }
+</style>
+<body>
+<div class="box"></div>
+</body>
+<script type="text/javascript">
+    //过渡效果触发时执行(多次执行)
+	document.querySelector('.box').addEventListener('transitionend', function () {
+		console.log('transitionend')
+	},false)
+</script>
+</html>

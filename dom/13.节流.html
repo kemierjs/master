@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节流</title>
+</head>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background: #000;
+    }
+</style>
+<body>
+<div></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div></div>
+</body>
+<script type="text/javascript">
+	function throttle(callback, delay) {
+		let pre = 0 // 默认值不要是Date.now() ==> 第1次事件立即调用
+		return function (event) { // 节流函数/真正的事件回调函数   this是发生事件的标签
+			const current = Date.now()
+			if (current - pre > delay) { // 只有离上一次调用callback的时间差大于delay
+				// 调用真正处理事件的函数, this是事件源, 参数是event
+				callback.call(this, event)
+				// 记录此次调用的时间
+				pre = current
+			}
+		}
+	}
+
+	let fn = function () {
+		domList.forEach(function (el) {
+			let {top, bottom} = el.getBoundingClientRect()
+			if (top < window.innerHeight && bottom > 0) {
+				console.log(top, bottom)
+			}
+		})
+	}
+	let domList = document.querySelectorAll('div')
+	window.addEventListener('scroll', throttle(fn, 500))
+</script>
+</html>

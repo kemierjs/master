@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>防抖</title>
+</head>
+<body>
+<label id="username">
+    姓名：
+    <input type="text" name="username">
+</label>
+</body>
+<script type="text/javascript">
+	let el = document.querySelector('input')
+	function fn(content) {
+		console.log(content)
+	}
+
+	function debounce(fn, delay) {
+		return function (args) {
+			clearTimeout(fn.id)
+			fn.id = setTimeout(() => {
+				fn.call(this,args)
+			}, delay)
+		}
+	}
+
+	let fun = debounce(fn, 500)
+	el.addEventListener('input', function (event) {
+		fun(event.target.value)
+	})
+</script>
+</html>

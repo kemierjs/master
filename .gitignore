@@ -1,0 +1,17 @@
+.idea/
+
+# 项目排除路径
+/typescript/1.基础类型/1.boolean-type.js
+/typescript/1.基础类型/2.number-type.js
+/typescript/1.基础类型/3.string-type.js
+/typescript/1.基础类型/4.arr-type.js
+/typescript/1.基础类型/5.enum-type.js
+/typescript/1.基础类型/6.any-type.js
+/typescript/1.基础类型/7.void-type.js
+/typescript/1.基础类型/8.null-undefind-type.js
+/typescript/1.基础类型/9.never-type.js
+/typescript/1.基础类型/10.object-type.js
+/typescript/1.基础类型/11.assert.js
+/typescript/others/1.test.js
+/typescript/others/1.test.js.map
+/typescript/others/index.js

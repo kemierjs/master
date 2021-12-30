@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节流</title>
+</head>
+<style>
+    div {
+        width: 100px;
+        height: 100px;
+        background: #000;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+<body>
+<main>
+<a href="#g" id="m">点我</a>
+<div></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div></div>
+<br><br><br><br><br><br><br><br><br><br><br>< br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div></div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div></div>
+<a href="#m" id="g">点我</a>
+</main>
+</body>
+<script type="text/javascript">
+	let option = {}
+    let domList = document.querySelectorAll('div')
+	let observer = new IntersectionObserver(function (entries) {
+		entries.forEach(function (value) {
+			if (value.intersectionRatio) {
+				console.log(1243)
+
+				observer.unobserve(value.target)
+			}
+		})
+	}, option)
+
+	domList.forEach(function (el) {
+		el.scrollIntoView({
+			behavior: "smooth"
+		});
+		observer.observe(el)
+	})
+	window.scrollTo({
+		behavior: 'smooth' //平滑滚动
+	});
+
+
+
+</script>
+</html>
