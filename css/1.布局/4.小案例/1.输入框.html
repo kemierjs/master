@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>输入框</title>
+    <link rel="stylesheet" href="../6.样式/main.css">
+</head>
+<style>
+    .container {
+        border: 1px solid rgba(24, 24, 24, 0.65);
+        width: 150px;
+        display: flex;
+        height: 24px;
+        position: relative;
+    }
+
+    .container > input {
+        width: 85%;
+        border: none;
+        font-size: 1em;
+    }
+
+    .container > input:focus {
+        outline: none;
+    }
+
+    .container > span {
+        flex: 1;
+    }
+
+    .container > span::after {
+        width: 10px;
+        height: 10px;
+        content: '';
+        display: block;
+        background: rgba(0, 0, 0, 0.37);
+        border-radius: 50%;
+    }
+
+    .tip {
+        position: absolute;
+        bottom: -80%;
+        color: #c22121;
+        display: none;
+    }
+
+    .container > input:focus + .tip {
+        display: block;
+        font-size: 0.8em;
+    }
+</style>
+<body>
+<main class="center box-lg-size">
+    <div class="container">
+        <input type="text">
+        <div class="tip">请输入您的用户名</div>
+        <span class="center"></span>
+    </div>
+</main>
+</body>
+</html>
