@@ -6,55 +6,37 @@
     <link rel="stylesheet" href="../common/style/main.css">
 </head>
 <style>
-    .container {
-        border: 1px solid rgba(24, 24, 24, 0.65);
-        width: 150px;
-        display: flex;
-        height: 24px;
-        position: relative;
-    }
-
-    .container > input {
-        width: 85%;
-        border: none;
-        font-size: 1em;
-    }
-
-    .container > input:focus {
-        outline: none;
-    }
-
-    .container > span {
-        flex: 1;
-    }
-
-    .container > span::after {
-        width: 10px;
-        height: 10px;
-        content: '';
-        display: block;
-        background: rgba(0, 0, 0, 0.37);
-        border-radius: 50%;
-    }
-
-    .tip {
-        position: absolute;
-        bottom: -80%;
-        color: #c22121;
-        display: none;
-    }
-
-    .container > input:focus + .tip {
-        display: block;
-        font-size: 0.8em;
-    }
+input {
+    padding-left: 50px;
+    width: 500px;
+    height: 50px;
+    font-size: 20px;
+}
+input:focus{
+    color: #212529;
+    background-color: #fff;
+    border-color: #00c97e;
+    outline: 0;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0px 0px 3px 0.25rem rgba(0 ,150, 94 ,0.25)
+}
+.com-input{
+    position: relative;
+}
+.com-input .icon {
+    position: absolute;
+    top: 0;
+    line-height: 54px;
+    height: 54px;
+}
 </style>
 <body>
 <main class="center box-lg-size">
     <div class="container">
-        <input type="text">
-        <div class="tip">请输入您的用户名</div>
-        <span class="center"></span>
+            <div class="com-input">
+                <input type="text" placeholder='搜素关键字'>
+                <div class="icon">23423</div>
+            </div>
     </div>
 </main>
 </body>
