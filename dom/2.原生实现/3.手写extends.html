@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手写继承</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    function Animal(name,age) {
+        this.name = age;
+    }
+
+    function Dog() {
+        Animal.call(this, ...arguments);
+    }
+    Object.setPrototypeOf(Dog.prototype,Animal.prototype)
+    let dog = new Dog(1,3434);
+    console.log(dog)
+</script>
+</html>

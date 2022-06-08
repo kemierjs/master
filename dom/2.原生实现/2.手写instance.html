@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    function judgeInstance() {
+        let [person, child] = [...arguments]
+        while (child) {
+            if (child === person.prototype) {
+                return true
+            }
+            child = child.__proto__
+        }
+        return false;
+    }
+    let result = judgeInstance(Object,[]);
+    console.log(result)
+</script>
+</html>

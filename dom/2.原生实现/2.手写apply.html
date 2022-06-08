@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    Function.prototype._apply = function () {
+        let [that, ...args] = arguments;
+        let fn = this;
+        return fn.call(that, ...args);
+    };
+
+    function test(params) {
+        console.log(params)
+        console.log(this.name)
+    }
+    test.call({name:'zs'},34324)
+</script>
+</html>

@@ -1,20 +1,17 @@
 <script type="text/javascript">
-	let obj = {
-		name: 'zs'
-	}
-	Function.prototype.bind = function (context) {
-		let fn = this
-		let _this = [].shift.call(arguments)
-		let args = arguments
-		return function () {
-			fn.apply(_this, args)
-		}
-	}
 
-	function test(param) {
-		console.log(this.name)
-		console.log(param)
-	}
+    Function.prototype._bind = function () {
+        let [that,...args] = [...arguments]
+        let fn = this
+        return function () {
+            fn.apply(that, args)
+        }
+    }
 
-	test.bind(obj, 123)()
+    function test(param) {
+        console.log(this.name)
+    }
+
+    test._bind({name:'zs'}, 23423)();
+
 </script>

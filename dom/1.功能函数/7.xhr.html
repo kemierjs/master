@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+</body>
+<script type="text/javascript">
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://localhost:3000');
+    xhr.onload = function (res) {
+        let dom = document.querySelector('div');
+        dom.outerHTML=xhr.response
+    };
+    xhr.send(null);
+</script>
+</html>
