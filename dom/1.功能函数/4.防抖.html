@@ -5,29 +5,24 @@
     <title>防抖</title>
 </head>
 <body>
-<label id="username">
-    姓名：
-    <input type="text" name="username">
-</label>
+<input type="text" id="app">
 </body>
 <script type="text/javascript">
-	let el = document.querySelector('input')
-	function fn(content) {
-		console.log(content)
-	}
+    function inputChange(fn, delay) {
+        let timer = null;
+        return function () {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                fn();
+            }, delay);
+        };
+    }
 
-	function debounce(fn, delay) {
-		return function (args) {
-			clearTimeout(fn.id)
-			fn.id = setTimeout(() => {
-				fn.call(this,args)
-			}, delay)
-		}
-	}
 
-	let fun = debounce(fn, 500)
-	el.addEventListener('input', function (event) {
-		fun(event.target.value)
-	})
+    let biubiu = function () {
+        let date = new Date();
+        console.log('biu biu biu', `${date.getFullYear()}/${date.getMonth()}/${date.getDate()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`)
+    }
+    document.querySelector('#app').addEventListener('keyup', inputChange(biubiu, 1000))
 </script>
 </html>

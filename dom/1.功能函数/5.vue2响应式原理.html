@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    function reactive(obj, key ,value) {
+        Object.defineProperty(obj, key, {
+            get() {
+                return value;
+            },
+            set(val) {
+                value = val
+            }
+        });
+    }
+
+    let obj = {
+        name: 'zs',
+        age: 18
+    };
+    Object.keys(obj).forEach((key, index) => {
+        reactive(obj, key ,obj[key])
+    });
+    console.log(obj)
+    obj.like = 'zs';
+    //弊端：只有初始化对象上的属性具有响应式，新增的属性没有响应式
+</script>
+</html>

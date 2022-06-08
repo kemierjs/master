@@ -1,35 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./index.css">
-    <title>布局</title>
+    <title>Title</title>
 </head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
 
+
+</style>
 <body>
 <div class="app">
-    <div class="header"></div>
-    <div class="com-comtent">
-        <div class="com-aside"></div>
-        <div class="com-main">
-            <div class="com-context">
-                <div class="one"></div>
-                <div class="one"></div>
-                <div class="one"></div>
-                <div class="one"></div>
-                <div class="one"></div>
-                <div class="one"></div>
-                <div class="one"></div>
-            </div>
-            <div class="footer"></div>
-        </div>
-    </div>
 </div>
 </body>
 <script type="text/javascript">
+    function Node(name) {
+        this.left = null;
+        this.right = null;
+        this.name = name
+        this.preEach = () => {
+            console.log(this)
+            if (this.left) {
+                this.left.preEach();
+            }
+            if (this.right) {
+                this.right.preEach();
+            }
+
+        };
+    }
+
+    let root = new Node('root');
+    let l = new Node('l');
+    let r = new Node('r');
+    let ll = new Node('ll');
+    let lr = new Node('lr');
+    let rl = new Node('rl');
+    let rr = new Node('rr');
+    root.left = l;
+    root.right = r;
+    l.left = ll;
+    l.right = lr;
+    r.left = rl;
+    r.right = rr;
+
+    root.preEach();
 
 </script>
 </html>

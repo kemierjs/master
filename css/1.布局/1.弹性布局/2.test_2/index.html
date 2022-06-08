@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=1.0, initial-scale=1.0, maximum-scale=2.0, minimum-scale=0.5">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    a {
+        color: #999;
+        text-decoration: none;
+    }
+
+    .app {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header {
+        height: 80px;
+        background: #fff;
+        position: fixed;
+        width: 100%;
+        border-top: 2px solid #026e0b;
+        box-shadow: 0 0 10px 0px #000;
+        z-index: 10;
+    }
+
+    .header > .head {
+        max-width: 1116px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        padding: 20px 0;
+
+    }
+
+    .header > .head .logo {
+        width: 139px;
+        height: 100%;
+        background: #000;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    .header .head .nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 20px;
+    }
+
+    .header .head .nav > ul {
+        list-style: none;
+        display: flex;
+    }
+
+    .header .head .nav > ul li {
+        height: 100%;
+        font-weight: 600;
+        font-size: 16px;
+        margin: 0 20px;
+        cursor: pointer;
+        flex-shrink: 0;
+    }
+
+    .header > .head .search {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .header > .head .search .input {
+        flex: 1;
+        border: 1px solid #eee;
+        outline: none;
+        font-size: 16px;
+        padding-left: 20px;
+    }
+
+    .header > .head .search > .btn {
+        width: 90px;
+        height: 100%;
+    }
+
+    .main {
+        margin-top: 80px;
+        background: #e9ecef;
+    }
+
+    .main .crumbs {
+        height: 50px;
+        display: flex;
+        align-items: center;
+    }
+
+    .main .crumbs > ul {
+        list-style: none;
+        display: flex;
+    }
+
+    .main .crumbs > ul li {
+        font-size: 14px;
+    }
+
+    .main .crumbs > ul li:last-child a {
+        color: #999;
+    }
+
+    .main .crumbs > ul li:not(:last-child) a {
+        color: #059305;
+    }
+
+    .main .crumbs > ul li:not(:last-child)::after {
+        content: '/';
+        display: inline-block;
+        padding: 0 10px;
+    }
+
+    .main .com-contain {
+        max-width: 1116px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .main .com-contain .contain {
+        display: flex;
+        gap: 20px;
+
+    }
+
+    .main .com-contain .contain .context {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .main .com-contain .contain .context > .item {
+        height: 200px;
+        background: #000;
+        color: #fff;
+    }
+
+    .main .com-contain .contain .aside {
+        width: 200px;
+        height: 600px;
+        background: #000;
+    }
+
+    .nail {
+        position: absolute;
+        top: 140px;
+        left: -80px;
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .nail > .item {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        cursor: pointer;
+        transition: all .3s;
+    }
+
+    .nail > .item:hover {
+        width: 60px;
+        height: 60px;
+        transition: all .3s;
+        font-size: 20px;
+        background: #ff0000;
+    }
+
+    .flag::after {
+        content: '';
+        display: inline-block;
+        border-bottom: 0;
+        vertical-align: 0.15rem;
+        border-top: 0.3rem solid;
+        margin-left: 4px;
+        border-left: solid transparent .3rem;
+        border-right: solid transparent .3rem;
+    }
+
+    .flag {
+        transition: all .5s;
+    }
+
+    .flag:hover::after {
+        transform: rotate(180deg);
+        transition: all .5s;
+    }
+</style>
+<body>
+<div class="app">
+    <div class="header">
+        <div class="head">
+            <div class="logo">logo</div>
+            <div class="nav">
+                <ul>
+                    <li>问答</li>
+                    <li>专栏</li>
+                    <li>课程</li>
+                    <li>招聘</li>
+                    <li>活动</li>
+                    <li class="flag">发现</li>
+                </ul>
+            </div>
+            <div class="search">
+                <input class="input" type="text">
+                <button class="btn">注册登录</button>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="com-contain">
+            <div class="nail">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+            </div>
+            <div class="crumbs">
+                <ul>
+                    <li><a href="">首页</a></li>
+                    <li><a href="">专栏</a></li>
+                    <li><a href="">WEB自学实践</a></li>
+                    <li><a href="">文章详情</a></li>
+                </ul>
+            </div>
+            <div class="contain">
+                <div class="context">
+                    <div class="item">1</div>
+                    <div class="item">2</div>
+                    <div class="item">3</div>
+                    <div class="item">4</div>
+                    <div class="item">5</div>
+                    <div class="item">6</div>
+                    <div class="item">7</div>
+                    <div class="item">8</div>
+                    <div class="item">9</div>
+                    <div class="item">10</div>
+                </div>
+                <div class="aside"></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</body>
+<style>
+    @media screen and (max-width: 1280px) {
+        .nail {
+            display: none !important;
+        }
+    }
+</style>
+</html>

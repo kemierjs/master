@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script type="text/javascript">
+    function reactive(traget) {
+        let handler = {
+            get(target, key, receiver) {
+                console.log('触发了get')
+               return target[key]
+
+            },
+            set(target, key, value, receiver) {
+                console.log('触发了set')
+                target[key]=value
+            }
+        };
+        return new Proxy(traget, handler)
+    }
+    let target={
+        name: 'zs',
+        age: 18
+    }
+    // let result = reactive(target);
+    // result.like='23423'
+    // console.log(result.like)
+    //ref 实现
+    function ref(value) {
+        return reactive({
+            value
+        })
+    }
+
+    let result = ref(5)
+
+    console.log(result)
+</script>
+</html>
