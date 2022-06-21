@@ -1,0 +1,160 @@
+/*适配超小屏*/
+@media screen and ( max-width: 750px) {
+    .row > [class*=col] {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/*适配小屏及以上*/
+@media screen and (min-width: 750px ) {
+    .col-sm1 {
+        width: 8.3333333%;
+    }
+
+    .col-sm2 {
+        width: 16.6666667%;
+    }
+
+    .col-sm3 {
+        width: 25%;
+    }
+
+    .col-sm4 {
+        width: 33.3333333%;
+    }
+
+    .col-sm5 {
+        width: 41.6666667%;
+    }
+
+    .col-sm6 {
+        width: 50%;
+    }
+
+    .col-sm7 {
+        width: 58.3333333%;
+    }
+
+    .col-sm8 {
+        width: 66.6666667%;
+    }
+
+    .col-sm9 {
+        width: 75%;
+    }
+
+    .col-sm10 {
+        width: 83.3333333%;
+    }
+
+    .col-sm11 {
+        width: 91.6666667%;
+    }
+
+    .col-sm12 {
+        width: 100%;
+    }
+}
+
+/*适配中屏及以上*/
+@media screen and (min-width: 960px ) {
+    .col-md1 {
+        width: 8.3333333%;
+    }
+
+    .col-md2 {
+        width: 16.6666667%;
+    }
+
+    .col-md3 {
+        width: 25%;
+    }
+
+    .col-md4 {
+        width: 33.3333333%;
+    }
+
+    .col-md5 {
+        width: 41.6666667%;
+    }
+
+    .col-md6 {
+        width: 50%;
+    }
+
+    .col-md7 {
+        width: 58.3333333%;
+    }
+
+    .col-md8 {
+        width: 66.6666667%;
+    }
+
+    .col-md9 {
+        width: 75%;
+    }
+
+    .col-md10 {
+        width: 83.3333333%;
+    }
+
+    .col-md11 {
+        width: 91.6666667%;
+    }
+
+    .col-md12 {
+        width: 100%;
+    }
+}
+
+/*适配大屏*/
+@media screen and (min-width: 1200px ) {
+    .col-lg1 {
+        width: 8.3333333%;
+    }
+
+    .col-lg2 {
+        width: 16.6666667%;
+    }
+
+    .col-lg3 {
+        width: 25%;
+    }
+
+    .col-lg4 {
+        width: 33.3333333%;
+    }
+
+    .col-lg5 {
+        width: 41.6666667%;
+    }
+
+    .col-lg6 {
+        width: 50%;
+    }
+
+    .col-lg7 {
+        width: 58.3333333%;
+    }
+
+    .col-lg8 {
+        width: 66.6666667%;
+    }
+
+    .col-lg9 {
+        width: 75%;
+    }
+
+    .col-lg10 {
+        width: 83.3333333%;
+    }
+
+    .col-lg11 {
+        width: 91.6666667%;
+    }
+
+    .col-lg12 {
+        width: 100%;
+    }
+}

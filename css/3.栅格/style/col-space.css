@@ -1,0 +1,56 @@
+/*设置间距*/
+.col-space1 {
+    margin: 0 -0.5px;
+}
+
+.col-space5 {
+    margin: 0 -2.5px;
+}
+
+.col-space10 {
+    margin: 0 -5px;
+}
+
+.col-space15 {
+    margin: 0 -7.5px;
+}
+
+.col-space20 {
+    margin: 0 -10px;
+}
+
+.col-space25 {
+    margin: 0 -12.5px;
+}
+
+.col-space30 {
+    margin: 0 -15px;
+}
+
+.col-space1 > [class*=col] {
+    padding: 0 0.5px;
+}
+
+.col-space5 > [class*=col] {
+    padding: 0 2.5px;
+}
+
+.col-space10 > [class*=col] {
+    padding: 0 5px;
+}
+
+.col-space15 > [class*=col] {
+    padding: 0 7.5px;
+}
+
+.col-space20 > [class*=col] {
+    padding: 0 10px;
+}
+
+.col-space25 > [class*=col] {
+    padding: 0 12.5px;
+}
+
+.col-space30 > [class*=col] {
+    padding: 0 15px;
+}

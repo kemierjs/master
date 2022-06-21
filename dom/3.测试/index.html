@@ -1,34 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-
-</style>
 <body>
 <div class="app">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+    <div class="item">10</div>
+    <div class="item">11</div>
+    <div class="item">12</div>
 </div>
 </body>
-<script type="text/javascript">
-
-   function Person() {
-        this.name = 'ls';
+<style>
+    .app {
+        display: flex;
+        gap: 10px;
+        align-items: center;
     }
-
-   Person.prototype.test = function () {
-
-   };
-    let person = new Person;
-
-    for (const personKey in person) {
-        console.log(person.hasOwnProperty(personKey));
+    .item {
+        height: 100px;
+        background: #000;
+        flex: 1;
     }
-</script>
+    .item:nth-child(odd) {
+        height: 200px;
+    }
+</style>
 </html>
