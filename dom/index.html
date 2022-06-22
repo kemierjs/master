@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<a href="#">
+    <div class="item"></div>
+</a>
+</body>
+<style>
+    .item {
+        width: 100px;
+        height: 100px;
+        background: #000;
+        animation: test 5s infinite ;
+        transition: all 2s;
+    }
+
+    .item:hover {
+        transition: all 2s;
+        animation-play-state: paused;
+    }
+
+    @keyframes test {
+        from ,to ,25%,50%,75% {
+            border-radius: 50%;
+        }
+        25% {
+            background: #f00;
+            transform: translate(400px)  scale(2,2);
+        }
+        50% {
+            transform: translate(400px, 400px)  ;
+            background: #0f0;
+        }
+        75% {
+            transform: translate(0, 400px)  scale(2,2);
+            background: #00f;
+        }
+    }
+</style>
+</html>

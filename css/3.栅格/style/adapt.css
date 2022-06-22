@@ -1,5 +1,8 @@
 /*适配超小屏*/
 @media screen and ( max-width: 750px) {
+    .row{
+        row-gap: 5px;
+    }
     .row > [class*=col] {
         width: 100%;
         margin-left: 0;
@@ -8,6 +11,9 @@
 
 /*适配小屏及以上*/
 @media screen and (min-width: 750px ) {
+    .row{
+        row-gap: 10px;
+    }
     .col-sm1 {
         width: 8.3333333%;
     }
@@ -59,6 +65,9 @@
 
 /*适配中屏及以上*/
 @media screen and (min-width: 960px ) {
+    .row{
+        row-gap: 20px;
+    }
     .col-md1 {
         width: 8.3333333%;
     }
@@ -110,6 +119,9 @@
 
 /*适配大屏*/
 @media screen and (min-width: 1200px ) {
+    .row{
+        row-gap: 30px;
+    }
     .col-lg1 {
         width: 8.3333333%;
     }
