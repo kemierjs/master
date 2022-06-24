@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<input type="text" id="input">
+</body>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .item {
+    width: 100px;
+    height: 100px;
+    background: #f00;
+    margin: 10px;
+  }
+
+</style>
+<script type="text/javascript">
+  let div = document.createElement('div');
+  div.innerHTML = `<div>23432</div>`
+  let target = document.querySelector('#input')
+  target.addEventListener('click', (e) => {
+    document.body.appendChild(div);
+    let {left, bottom} = e.target.getBoundingClientRect();
+    div.classList.add('flag')
+    div.style.position = 'absolute'
+    div.style.top = '0'
+    div.style.left = '0'
+    div.style.transform = `translate(${left}px,${bottom}px)`
+  })
+  document.documentElement.addEventListener('click', (e) => {
+    if (div.contains(e.target) || target.contains(e.target)) {
+      div.style.display = 'block';
+    } else {
+      div.style.display = 'none';
+    }
+  })
+
+</script>
+
+</html>
